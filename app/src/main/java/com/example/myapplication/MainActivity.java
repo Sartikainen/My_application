@@ -25,7 +25,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "EXAMPLE";
-    //private static final String KEY_STRING = "KEY_STRING";
+//    private static final String KEY_STRING = "KEY_STRING";
     private Button button;
 
     @SuppressLint("MissingInflatedId")
@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Вопрос отправлен", Snackbar.LENGTH_LONG).show();
-                // startActivity(new Intent(MainActivity.this, SecondActivity.class));
-                // Log.e("MY_LOG", "Yami");
+//                 startActivity(new Intent(MainActivity.this, SecondActivity.class));
+//                 Log.e("MY_LOG", "Yami");
             }
         });
 
@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, SecondActivity.class));
-                //final Intent intent = new Intent(MainActivity.this, MyService.class);
-                //startService(intent);
+//                final Intent intent = new Intent(MainActivity.this, MyService.class);
+//                startService(intent);
             }
         });
 
@@ -57,15 +57,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, ThirdActivity.class));
-                //final Cursor cursor = getContentResolver().query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
-                //if (cursor != null) {
-                  //  cursor.moveToFirst();
-                //do {
-                  //      @SuppressLint("Range") final String name = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
-                  //      Log.e("MY_LOG", name);
-                  //  } while (cursor.moveToNext());
-                // cursor.close();
-                //}
+//                final Cursor cursor = getContentResolver().query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
+//                if (cursor != null) {
+//                  cursor.moveToFirst();
+//                do {
+//                      @SuppressLint("Range") final String name = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+//                      Log.e("MY_LOG", name);
+//                  } while (cursor.moveToNext());
+//                 cursor.close();
+//                }
             }
         });
 
@@ -77,22 +77,22 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //@Override
-    //protected void onSaveInstanceState(@NonNull Bundle outState) {
-    //    super.onSaveInstanceState(outState);
-    //    Log.e(TAG, "MainActivity onSaveInstanceState");
-    //    outState.putString(KEY_STRING, editText.getText().toString());
-    //}
-
-    //@Override
-    //public void onRestoreInstanceState(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-    //    super.onRestoreInstanceState(savedInstanceState, persistentState);
-    //    Log.e(TAG, "MainActivity onRestoreInstanceState");
-    //    final String text = savedInstanceState.getString(KEY_STRING);
-    //    if(text != null) {
-    //        button.setText(text);
-    //    }
-    //}
+//    @Override
+//    protected void onSaveInstanceState(@NonNull Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        Log.e(TAG, "MainActivity onSaveInstanceState");
+//        outState.putString(KEY_STRING, editText.getText().toString());
+//    }
+//
+//    @Override
+//    public void onRestoreInstanceState(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+//        super.onRestoreInstanceState(savedInstanceState, persistentState);
+//        Log.e(TAG, "MainActivity onRestoreInstanceState");
+//        final String text = savedInstanceState.getString(KEY_STRING);
+//        if(text != null) {
+//            button.setText(text);
+//        }
+//    }
 
     @Override
     protected void onRestart() {
