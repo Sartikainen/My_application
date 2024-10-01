@@ -2,24 +2,37 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class SecondActivity extends AppCompatActivity {
     private static final String TAG = "EXAMPLE";
+    private static final String KEY_STRING = "KEY_STRING";
+    private Button button;
+    private Button button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.e(TAG, "SecondActivity onCreate" + this);
         setContentView(R.layout.activity_second);
-        findViewById(R.id.image);
-        findViewById(R.id.progressBar);
-        findViewById(R.id.text_second_activity);
+        button = findViewById(R.id.button_check);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Данные сохранены", Snackbar.LENGTH_LONG).show();
+            }
+        });
     }
+
 
     @Override
     protected void onRestart() {

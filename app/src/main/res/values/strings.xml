@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name"> Прилазеня </string>
     <string name="launch_other_activity"> Отправить </string>
-    <string name="text_launch_service"> Материалы </string>
+    <string name="text_launch"> Создать аккаунт </string>
     <string name="text_movies"> Фильмы </string>
     <string name="finish"> Выход </string>
-    <string name="text_second_activity"> Раздел в разработке </string>
+    <string name="text_button_check"> Сохранить данные </string>
 </resources>
