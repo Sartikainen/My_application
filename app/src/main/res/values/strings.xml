@@ -5,4 +5,5 @@
     <string name="text_movies"> Фильмы </string>
     <string name="finish"> Выход </string>
     <string name="text_button_check"> Сохранить данные </string>
+    <string name="text_button_check_2">Связаться с поддержкой</string>
 </resources>
