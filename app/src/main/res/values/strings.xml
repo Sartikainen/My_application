@@ -8,6 +8,7 @@
     <string name="text_button_check_2">Связаться с поддержкой</string>
     <string name="hint_message">Введите вопрос</string>
     <string name="button_send">Отправить</string>
+    <string name="choose_method">Как вы хотите отправить сообщение?</string>
 
     <string-array name="list_of_movies">
         <item>Star Trek: Picard</item>
