@@ -15,9 +15,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class SecondActivity extends AppCompatActivity {
     private static final String TAG = "EXAMPLE";
-    private static final String KEY_STRING = "KEY_STRING";
     private Button button;
-    private Button button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

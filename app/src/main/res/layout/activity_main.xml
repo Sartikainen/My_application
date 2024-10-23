@@ -7,29 +7,35 @@
     android:background="@drawable/witcher"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="211dp"
-        android:layout_height="49dp"
-        android:hint="Задать вопрос"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+    <Spinner
+        android:id="@+id/action_bar_spinner"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:entries="@array/list_of_movies"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toStartOf="@id/button_describe"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_describe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/launch_other_activity"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/button_describe"
+        android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintStart_toEndOf="@id/action_bar_spinner"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_describe_movie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/message_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
     <Button
         android:id="@+id/button_activity_second"
@@ -66,6 +72,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.98" />
+
+    <EditText
+        android:id="@+id/message_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:hint="@string/hint_message"
+        app:layout_constraintStart_toStartOf="@id/action_bar_spinner"
+        app:layout_constraintTop_toBottomOf="@id/action_bar_spinner"
+        android:layout_margin="10dp" />
+
+    <Button
+        android:id="@+id/button_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_send"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_describe" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
