@@ -3,7 +3,6 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -46,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.finish).setOnClickListener(view ->
                 finish());
+
+        findViewById(R.id.button_stopwatch). setOnClickListener(view ->
+                startActivity(new Intent(MainActivity.this, StopWatch.class)));
     }
 
     public void showDescription() {
