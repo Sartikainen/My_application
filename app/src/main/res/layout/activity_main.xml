@@ -31,6 +31,7 @@
         android:id="@+id/text_describe_movie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +41,7 @@
         android:id="@+id/button_activity_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_launch"
+        android:text="@string/text_lk"
         android:layout_margin="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/button_movies"/>

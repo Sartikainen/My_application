@@ -28,13 +28,13 @@ public class StopWatch extends AppCompatActivity {
         }
         runTimer();
 
-        findViewById(R.id.button_start_stopwatch). setOnClickListener(view -> {
-            isRunning = true;
-        });
+        findViewById(R.id.button_start_stopwatch). setOnClickListener(view ->
+            isRunning = true
+        );
 
-        findViewById(R.id.button_pause_stopwatch). setOnClickListener(view -> {
-            isRunning = false;
-        });
+        findViewById(R.id.button_pause_stopwatch). setOnClickListener(view ->
+            isRunning = false
+        );
 
         findViewById(R.id.button_reset_stopwatch). setOnClickListener(view -> {
             isRunning = false;
@@ -43,15 +43,15 @@ public class StopWatch extends AppCompatActivity {
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
+    protected void onPause() {
+        super.onPause();
         wasRunning=isRunning;
         isRunning=false;
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
+    protected void onResume() {
+        super.onResume();
         isRunning=wasRunning;
     }
 

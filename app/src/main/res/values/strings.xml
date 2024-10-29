@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name"> Прилазеня </string>
     <string name="button_describe"> Описание </string>
-    <string name="text_launch"> Создать аккаунт </string>
+    <string name="text_lk"> Личный кабинет </string>
     <string name="text_movies"> Фильмы </string>
     <string name="finish"> Выход </string>
     <string name="text_button_check"> Сохранить данные </string>
@@ -14,6 +14,25 @@
     <string name="pause_stopwatch">Pause</string>
     <string name="reset_stopwatch">Reset</string>
     <string name="text_stopwatch">0:00:00</string>
+    <string name="text_welcome">Добро пожаловать!</string>
+    <string name="button_lk">Авторизоваться</string>
+    <string name="logo_description">Логотип</string>
+    <string name="hint_name">Введите своё имя:</string>
+    <string name="hint_password">Введит свой пароль:</string>
+    <string name="toast">Все поля должны быть заполнены</string>
+    <string name="text_hello_client">Привет, %s! Что будешь делать?</string>
+    <string name="text_watch_movie">Смотреть фильм</string>
+    <string name="text_sleep">Спать</string>
+    <string name="text_towel">Одеялко</string>
+    <string name="text_add_order">Что принести, чтобы %s</string>
+    <string name="text_chips">Чипсики</string>
+    <string name="text_beer">Пивасик</string>
+    <string name="text_where">Где будешь вялиться?</string>
+    <string name="text_button_order">Кнопка заказать</string>
+    <string name="default_name">клиент</string>
+    <string name="default_password">пароль</string>
+    <string name="order">Имя: %s\nПароль: %s\n Собрался %s\n У него есть: %s</string>
+    <string name="need_additions">У тебя есть</string>
 
     <string-array name="list_of_movies">
         <item>Star Trek: Picard</item>
@@ -31,6 +50,18 @@
         <item>Готэм, начало 1980-х годов. Комик Артур Флек живет с больной матерью, которая с детства учит его «ходить с улыбкой». Пытаясь нести в мир хорошее и дарить людям радость, Артур сталкивается с человеческой жестокостью и постепенно приходит к выводу, что этот мир получит от него не добрую улыбку, а ухмылку злодея Джокера.</item>
         <item>После теракта в киевском оперном театре агент ЦРУ объединяется с британской разведкой, чтобы противостоять русскому олигарху, который сколотил состояние на торговле оружием. Для этого агенты используют инверсию времени — технологию будущего, позволяющую времени идти вспять.</item>
         <item>Фильм рассказывает о будущем, в котором межзвёздные путешествия осуществляются перемещением сознания между телами («оболочками»). Такеши Ковач, бывший элитный солдат Корпуса посланников, становится частным детективом, нанятым богатым человеком для расследования собственной смерти.</item>
+    </string-array>
+
+    <string-array name="options_of_movie">
+        <item>На стуле</item>
+        <item>На диване</item>
+        <item>В кинотеатре</item>
+    </string-array>
+
+    <string-array name="options_of_sleep">
+        <item>В кроватке</item>
+        <item>В машине</item>
+        <item>В подворотне</item>
     </string-array>
 
 </resources>

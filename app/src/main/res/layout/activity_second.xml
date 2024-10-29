@@ -1,240 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    android:alpha="0.8"
-    tools:context=".SecondActivity"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/light_blue"
+    android:orientation="vertical"
+    tools:context=".SecondActivity">
 
-    <ImageButton
-        android:id="@+id/image_face"
+    <ImageView
+        android:id="@+id/image_lk"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/logo_description"
+        app:srcCompat="@drawable/baseline_slideshow_24" />
+
+    <TextView
+        android:id="@+id/text_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="@string/text_welcome"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edit_text_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/hint_name"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edit_text_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_lk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:background="@color/white"
-        android:alpha="0.5"
-        android:src="@drawable/baseline_add_a_photo_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        android:text="@string/button_lk"
+        android:textColor="@color/dark_blue"
+        android:textSize="24sp" />
 
-    <ImageButton
-        android:id="@+id/image_arrow"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:layout_constraintTop_toTopOf="@+id/image_face"
-        app:layout_constraintStart_toStartOf="@+id/image_face"
-        android:layout_margin="10dp"
-        android:src="@drawable/baseline_arrow_back_ios_new_24" >
-    </ImageButton>
-
-    <TextView
-        android:id="@+id/text_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@+id/image_face"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:text="Имя:"
-        android:layout_margin="10dp"
-        >
-    </TextView>
-
-    <EditText
-        android:id="@+id/text_name2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/text_name"
-        app:layout_constraintBaseline_toBaselineOf="@id/text_name"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:maxLines="1"
-        android:hint="Введите своё имя"
-        >
-    </EditText>
-
-    <TextView
-        android:id="@+id/text_nick"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@+id/text_name"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:text="Фамилия:"
-        android:layout_margin="10dp"
-        >
-    </TextView>
-
-    <EditText
-        android:id="@+id/text_nick2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/text_nick"
-        app:layout_constraintBaseline_toBaselineOf="@id/text_nick"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:maxLines="1"
-        android:hint="Введите свою фамилию"
-        >
-    </EditText>
-
-    <TextView
-        android:id="@+id/text_age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@+id/text_nick"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:text="Возраст:"
-        android:layout_margin="10dp"
-        >
-    </TextView>
-
-    <EditText
-        android:id="@+id/text_age2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/text_age"
-        app:layout_constraintBaseline_toBaselineOf="@id/text_age"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:maxLines="1"
-        android:hint="Введите свой возраст"
-        >
-    </EditText>
-
-    <Button
-        android:id="@+id/button_check"
-        android:layout_width="250dp"
-        android:layout_height="45dp"
-        android:text="@string/text_button_check"
-        android:textSize="15sp"
-        app:layout_constraintTop_toBottomOf="@id/text_age2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
-    <TextView
-        android:id="@+id/text_recommended"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@+id/button_check"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        android:text="Рекомендации:"
-        android:layout_margin="10dp"
-        >
-    </TextView>
-
-    <HorizontalScrollView
-        android:id="@+id/scroll"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:layout_marginTop="410dp"
-        android:layout_marginBottom="300dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/image_person1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:layout_constraintTop_toBottomOf="@+id/text_recommended"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher_random">
-            </ImageView>
-
-            <ImageView
-                android:id="@+id/image_person2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:layout_constraintTop_toBottomOf="@+id/text_recommended"
-                app:layout_constraintStart_toEndOf="@id/image_person1"
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher_random" >
-            </ImageView>
-
-            <ImageView
-                android:id="@+id/image_person3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:layout_constraintTop_toBottomOf="@+id/text_recommended"
-                app:layout_constraintStart_toEndOf="@id/image_person2"
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher_random" >
-            </ImageView>
-
-            <ImageView
-                android:id="@+id/image_person4"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:layout_constraintTop_toBottomOf="@+id/text_recommended"
-                app:layout_constraintStart_toEndOf="@id/image_person3"
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher_random" >
-            </ImageView>
-
-            <ImageView
-                android:id="@+id/image_person5"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:layout_constraintTop_toBottomOf="@+id/text_recommended"
-                app:layout_constraintStart_toEndOf="@id/image_person4"
-                android:layout_margin="10dp"
-                android:src="@mipmap/ic_launcher_random" >
-            </ImageView>
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <TextView
-        android:id="@+id/text_server"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@+id/scroll"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="30sp"
-        android:textColor="@color/white"
-        android:text="Соединение с сервером"
-        android:layout_margin="40dp"
-        >
-    </TextView>
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="270dp"
-        android:layout_height="70dp"
-        android:indeterminate="true"
-        app:layout_constraintTop_toBottomOf="@id/text_server"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="20dp"/>
-
-    <Button
-        android:id="@+id/button_service"
-        android:layout_width="350dp"
-        android:layout_height="45dp"
-        android:text="@string/text_button_check_2"
-        android:textSize="15sp"
-        app:layout_constraintTop_toBottomOf="@id/progressBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="20dp"
-        />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

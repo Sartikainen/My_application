@@ -38,16 +38,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.button_activity_second).setOnClickListener(view ->
-                startActivity(new Intent(MainActivity.this, SecondActivity.class)));
+                startActivity(new Intent(this, SecondActivity.class)));
 
         findViewById(R.id.button_movies).setOnClickListener(view ->
-                startActivity(new Intent(MainActivity.this, ThirdActivity.class)));
+                startActivity(new Intent(this, ThirdActivity.class)));
 
         findViewById(R.id.finish).setOnClickListener(view ->
                 finish());
 
         findViewById(R.id.button_stopwatch). setOnClickListener(view ->
-                startActivity(new Intent(MainActivity.this, StopWatch.class)));
+                startActivity(new Intent(this, StopWatch.class)));
     }
 
     public void showDescription() {
