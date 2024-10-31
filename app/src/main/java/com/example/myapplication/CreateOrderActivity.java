@@ -4,15 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class CreateOrderActivity extends AppCompatActivity {
 
@@ -97,13 +92,15 @@ public class CreateOrderActivity extends AppCompatActivity {
             } else {
                 optionOfAction = spinnerSleep.getSelectedItem().toString();
             }
+
             String order = String.format(getString(R.string.order), name, password, action, optionOfAction);
             String additions;
             if (builderAdditions.length() > 0) {
-                additions = getString(R.string.need_additions) + builderAdditions.toString();
+                additions = "\n" + getString(R.string.need_additions) + builderAdditions.toString();
             } else {
                 additions = "";
             }
+
             String fullAction = order + additions;
             Intent intentAction = new Intent(this, ActionDetailActivity.class);
             intentAction.putExtra("order", fullAction);

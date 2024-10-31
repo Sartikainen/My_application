@@ -31,8 +31,8 @@
     <string name="text_button_order">Кнопка заказать</string>
     <string name="default_name">клиент</string>
     <string name="default_password">пароль</string>
-    <string name="order">Имя: %s\nПароль: %s\n Собрался %s\n У него есть: %s</string>
-    <string name="need_additions">У тебя есть</string>
+    <string name="order">Имя: %s\nПароль: %s\nСобрался: %s\nГде: %s</string>
+    <string name="need_additions">При себе имеются: </string>
 
     <string-array name="list_of_movies">
         <item>Star Trek: Picard</item>
