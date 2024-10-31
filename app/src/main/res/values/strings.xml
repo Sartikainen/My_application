@@ -2,7 +2,7 @@
     <string name="app_name"> Прилазеня </string>
     <string name="button_describe"> Описание </string>
     <string name="text_lk"> Личный кабинет </string>
-    <string name="text_movies"> Фильмы </string>
+    <string name="text_movies"> Выбрать фильм </string>
     <string name="finish"> Выход </string>
     <string name="text_button_check"> Сохранить данные </string>
     <string name="text_button_check_2">Связаться с поддержкой</string>
@@ -33,6 +33,7 @@
     <string name="default_password">пароль</string>
     <string name="order">Имя: %s\nПароль: %s\nСобрался: %s\nГде: %s</string>
     <string name="need_additions">При себе имеются: </string>
+    <string name="logo_choose_movie">Логотип выбора фильма</string>
 
     <string-array name="list_of_movies">
         <item>Star Trek: Picard</item>
@@ -62,6 +63,15 @@
         <item>В кроватке</item>
         <item>В машине</item>
         <item>В подворотне</item>
+    </string-array>
+
+    <string-array name="list_of_categories">
+        <item>Fantasy</item>
+        <item>Drama</item>
+        <item>Comedy</item>
+        <item>Action</item>
+        <item>Adventure</item>
+        <item>Thriller</item>
     </string-array>
 
 </resources>

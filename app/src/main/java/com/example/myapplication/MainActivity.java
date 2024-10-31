@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SecondActivity.class)));
 
         findViewById(R.id.button_movies).setOnClickListener(view ->
-                startActivity(new Intent(this, ThirdActivity.class)));
+                startActivity(new Intent(this, ChooseCategoryActivity.class)));
 
         findViewById(R.id.finish).setOnClickListener(view ->
                 finish());
