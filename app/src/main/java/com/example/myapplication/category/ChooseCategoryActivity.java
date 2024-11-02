@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.category;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myapplication.R;
 
 public class ChooseCategoryActivity extends AppCompatActivity {
 
@@ -26,10 +28,6 @@ public class ChooseCategoryActivity extends AppCompatActivity {
                 case 0:
                     Intent intent0 = new Intent(getApplicationContext(), FantasyCategoryActivity.class);
                     startActivity(intent0);
-                    break;
-                case 1:
-                    Intent intent1 = new Intent(getApplicationContext(), DramaCategoryActivity.class);
-                    startActivity(intent1);
                     break;
             }
 

@@ -34,6 +34,8 @@
     <string name="order">Имя: %s\nПароль: %s\nСобрался: %s\nГде: %s</string>
     <string name="need_additions">При себе имеются: </string>
     <string name="logo_choose_movie">Логотип выбора фильма</string>
+    <string name="image_fantasy_movies">Fantasy movies</string>
+    <string name="description_of_fantasy_png">fantasy_png</string>
 
     <string-array name="list_of_movies">
         <item>Star Trek: Picard</item>
@@ -73,5 +75,14 @@
         <item>Adventure</item>
         <item>Thriller</item>
     </string-array>
+
+    <string name="fantasy_mandalorian_title">The Mandalorian</string>
+    <string name="fantasy_witcher_title">The Witcher</string>
+    <string name="fantasy_harry_potter_title">Harry Potter</string>
+
+    <string name="fantasy_mandalorian_info">Американский телесериал в жанре космический вестерн, созданный Джоном Фавро для стримингового сервиса Disney+. Это первый игровой сериал, являющийся составной частью вселенной «Звёздных войн». Действие «Мандалорца» разворачивается пять лет спустя после событий фильма «Возвращение джедая».</string>
+    <string name="fantasy_witcher_info">Это экранизация литературного цикла польского писателя Анджея Сапковского. События книг разворачиваются в фэнтезийном мире Континента: там люди, эльфы, краснолюды и другие расы соседствуют с жуткими чудовищами. Главный герой сериала — профессиональный убийца чудовищ Геральт.</string>
+    <string name="fantasy_harry_potter_info">Серия фильмов о Гарри Поттере — серия фильмов, основанных на книгах о Гарри Поттере английской писательницы Дж. К. Роулинг. Серия выпущена компанией Warner Bros. и состоит из одиннадцати фильмов в жанре фэнтези, включая основную серию — начиная с «Гарри Поттер и философский камень» (2001) и заканчивая «Гарри Поттер и Дары Смерти. Часть 2» (2011), — а также спин-офф «Фантастические твари и где они обитают» (2016) и его сиквелы</string>
+    <string name="table">Таблица</string>
 
 </resources>

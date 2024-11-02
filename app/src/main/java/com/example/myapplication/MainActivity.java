@@ -1,11 +1,15 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.myapplication.category.ChooseCategoryActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView descriptionText;
     private EditText editTextMessage;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.button_stopwatch). setOnClickListener(view ->
                 startActivity(new Intent(this, StopWatch.class)));
+
+        findViewById(R.id.button_table).setOnClickListener(view ->
+                startActivity(new Intent(this, TableActivity.class)));
     }
 
     public void showDescription() {
