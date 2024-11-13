@@ -106,5 +106,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
+    <Button
+        android:id="@+id/button_guess_movie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/guess_movie"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toEndOf="@id/button_movies"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/button_table"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
