@@ -13,6 +13,10 @@ import android.widget.TextView;
 import com.example.myapplication.category.ChooseCategoryActivity;
 import com.example.myapplication.category.GuessMovieActivity;
 import com.google.android.material.snackbar.Snackbar;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,20 +31,15 @@ public class MainActivity extends AppCompatActivity {
     private TextView descriptionText;
     private EditText editTextMessage;
 
-    private String mailRu = "https://mail.ru/";
+    private String url = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,relative_humidity_2m,precipitation,rain,cloud_cover&timezone=Europe%2FBerlin";
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DownloadTask task = new DownloadTask();
-        try {
-            String result = String.valueOf(task.execute(mailRu).get());
-            Log.i("URL", result);
-        } catch (ExecutionException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        DownloadJSONTask task = new DownloadJSONTask();
+        task.execute(url);
 
         spinnerMovies = findViewById(R.id.action_bar_spinner);
         descriptionText = findViewById(R.id.text_describe_movie);
@@ -77,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.button_guess_movie).setOnClickListener(view ->
                 startActivity(new Intent(this, GuessMovieActivity.class)));
+
+        findViewById(R.id.button_test_brain).setOnClickListener(view ->
+                startActivity(new Intent(this, TestBrainActivity.class)));
     }
 
     public void showDescription() {
@@ -90,19 +92,19 @@ public class MainActivity extends AppCompatActivity {
         return descriptions[position];
     }
 
-    private static class DownloadTask extends AsyncTask<String, Void, String> {
+    private static class DownloadJSONTask extends AsyncTask<String, Void, String> {
 
         @Override
         protected String doInBackground(String... strings) {
-            StringBuilder result = new StringBuilder();
             URL url = null;
             HttpURLConnection urlConnection = null;
+            StringBuilder result = new StringBuilder();
             try {
                 url = new URL(strings[0]);
                 urlConnection = (HttpURLConnection) url.openConnection();
-                InputStream in = urlConnection.getInputStream();
-                InputStreamReader reader = new InputStreamReader(in);
-                BufferedReader bufferedReader = new BufferedReader(reader);
+                InputStream inputStream = urlConnection.getInputStream();
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                 String line = bufferedReader.readLine();
                 while (line != null) {
                     result.append(line);
@@ -116,6 +118,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             return result.toString();
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            try {
+                JSONObject jsonObject = new JSONObject(s);
+                JSONObject main = jsonObject.getJSONObject("current");
+                String temp = main.getString("temperature_2m");
+                String rain = main.getString("rain");
+                Log.i("MyResult", temp);
+                Log.i("MyResult", rain);
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

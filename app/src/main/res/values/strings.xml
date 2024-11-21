@@ -92,5 +92,8 @@
     <string name="button3">Button3</string>
     <string name="image_guess">image_guess</string>
     <string name="text_result">Твой результат: %d очков!</string>
+    <string name="test_brain">Test brain</string>
+    <string name="button_restart_game">НАЧАТЬ ЗАНОВО</string>
+    <string name="button_exit_main_menu">Выйти в главное меню</string>
 
 </resources>

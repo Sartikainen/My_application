@@ -117,5 +117,15 @@
         app:layout_constraintBottom_toTopOf="@id/button_table"
         />
 
+    <Button
+        android:id="@+id/button_test_brain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/test_brain"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/button_activity_second"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
