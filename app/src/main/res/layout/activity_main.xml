@@ -13,56 +13,40 @@
         android:layout_height="50dp"
         android:layout_margin="10dp"
         android:entries="@array/list_of_movies"
-        app:layout_constraintEnd_toStartOf="@id/button_describe"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_describe"
+        style="?android:attr/buttonBarButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:textColor="@color/white"
         android:text="@string/button_describe"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/action_bar_spinner"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_send"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textColor="@color/white"
+        android:text="@string/button_send"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_describe" />
 
     <TextView
         android:id="@+id/text_describe_movie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
         android:layout_margin="20dp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/message_text" />
-
-    <Button
-        android:id="@+id/button_activity_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_lk"
-        android:layout_margin="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/button_movies"/>
-
-    <Button
-        android:id="@+id/button_movies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_movies"
-        android:layout_margin="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/button_stopwatch" />
-
-    <Button
-        android:id="@+id/finish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/finish"
-        android:layout_margin="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/message_text"
@@ -73,59 +57,90 @@
         android:ems="10"
         android:hint="@string/hint_message"
         android:inputType="text"
-        app:layout_constraintStart_toStartOf="@id/action_bar_spinner"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/action_bar_spinner" />
 
-    <Button
-        android:id="@+id/button_send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/button_send"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_describe" />
 
     <Button
-        android:id="@+id/button_stopwatch"
+        android:id="@+id/finish"
+        style="?android:attr/buttonBarButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/stopwatch"
         android:layout_margin="10dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/finish"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/button_table"
-        android:layout_width="wrap_content"
+    <HorizontalScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/table"
-        android:layout_margin="10dp"
-        app:layout_constraintStart_toEndOf="@id/button_stopwatch"
-        app:layout_constraintEnd_toStartOf="@id/finish"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/finish">
 
-    <Button
-        android:id="@+id/button_guess_movie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/guess_movie"
-        android:layout_margin="10dp"
-        app:layout_constraintStart_toEndOf="@id/button_movies"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/button_table"
-        />
+        <LinearLayout
+            android:id="@+id/linear_scroll"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/button_test_brain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/test_brain"
-        android:layout_margin="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/button_activity_second"
-        />
+            <Button
+                android:id="@+id/button_movies"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/text_movies"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/button_activity_second"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/text_lk"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/button_stopwatch"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/stopwatch"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/button_table"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/table"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/button_guess_movie"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/guess_movie"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/button_test_brain"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/test_brain"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

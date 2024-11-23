@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 import com.example.myapplication.category.ChooseCategoryActivity;
 import com.example.myapplication.category.GuessMovieActivity;
 import com.google.android.material.snackbar.Snackbar;
@@ -31,15 +32,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView descriptionText;
     private EditText editTextMessage;
 
-    private String url = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,relative_humidity_2m,precipitation,rain,cloud_cover&timezone=Europe%2FBerlin";
-
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DownloadJSONTask task = new DownloadJSONTask();
-        task.execute(url);
 
         spinnerMovies = findViewById(R.id.action_bar_spinner);
         descriptionText = findViewById(R.id.text_describe_movie);
@@ -68,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.finish).setOnClickListener(view ->
                 finish());
 
-        findViewById(R.id.button_stopwatch). setOnClickListener(view ->
+        findViewById(R.id.button_stopwatch).setOnClickListener(view ->
                 startActivity(new Intent(this, StopWatch.class)));
 
         findViewById(R.id.button_table).setOnClickListener(view ->
@@ -87,52 +84,8 @@ public class MainActivity extends AppCompatActivity {
         descriptionText.setText(description);
     }
 
-    private String getDescriptionByPosition (int position) {
+    private String getDescriptionByPosition(int position) {
         String[] descriptions = getResources().getStringArray(R.array.decriptions_of_movies);
         return descriptions[position];
-    }
-
-    private static class DownloadJSONTask extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected String doInBackground(String... strings) {
-            URL url = null;
-            HttpURLConnection urlConnection = null;
-            StringBuilder result = new StringBuilder();
-            try {
-                url = new URL(strings[0]);
-                urlConnection = (HttpURLConnection) url.openConnection();
-                InputStream inputStream = urlConnection.getInputStream();
-                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                String line = bufferedReader.readLine();
-                while (line != null) {
-                    result.append(line);
-                    line = bufferedReader.readLine();
-                }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            } finally {
-                if (urlConnection != null) {
-                    urlConnection.disconnect();
-                }
-            }
-            return result.toString();
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            try {
-                JSONObject jsonObject = new JSONObject(s);
-                JSONObject main = jsonObject.getJSONObject("current");
-                String temp = main.getString("temperature_2m");
-                String rain = main.getString("rain");
-                Log.i("MyResult", temp);
-                Log.i("MyResult", rain);
-            } catch (JSONException e) {
-                throw new RuntimeException(e);
-            }
-        }
     }
 }
