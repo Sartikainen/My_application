@@ -11,6 +11,8 @@ import com.example.myapplication.category.ChooseCategoryActivity;
 import com.example.myapplication.category.GuessMovieActivity;
 import com.google.android.material.snackbar.Snackbar;
 
+import notes.NotesActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private Spinner spinnerMovies;

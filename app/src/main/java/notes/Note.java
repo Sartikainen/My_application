@@ -1,4 +1,4 @@
-package classes;
+package notes;
 
 public class Note {
     private String title;

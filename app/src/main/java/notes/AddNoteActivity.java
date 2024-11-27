@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package notes;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,10 +7,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import classes.Note;
+import com.example.myapplication.R;
 
 public class AddNoteActivity extends AppCompatActivity {
 
@@ -40,5 +41,6 @@ public class AddNoteActivity extends AppCompatActivity {
         Note note = new Note(title, description, dayOfWeek, priority);
         NotesActivity.notes.add(note);
         startActivity(new Intent(this, NotesActivity.class));
+        Toast.makeText(this, "Заметка создана", Toast.LENGTH_SHORT).show();
     }
 }

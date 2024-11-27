@@ -1,4 +1,4 @@
-package classes;
+package notes;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +12,19 @@ import java.util.ArrayList;
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder> {
 
     private ArrayList<Note> notes;
+    private OnNoteClickListener onNoteClickListener;
 
     public NotesAdapter(ArrayList<Note> notes) {
         this.notes = notes;
+    }
+
+    public interface OnNoteClickListener {
+        void onNoteClick(int position);
+        void onLongClick(int position);
+    }
+
+    public void setOnNoteClickListener(OnNoteClickListener onNoteClickListener) {
+        this.onNoteClickListener = onNoteClickListener;
     }
 
     @NonNull
@@ -56,6 +66,17 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
             textViewTitle = itemView.findViewById(R.id.text_view_title);
             textViewDescription = itemView.findViewById(R.id.text_view_description);
             textViewDayOfWeek = itemView.findViewById(R.id.text_view_dayOfWeek);
+            itemView.setOnClickListener(v -> {
+                if (onNoteClickListener != null) {
+                    onNoteClickListener.onNoteClick(getAdapterPosition());
+                }
+            });
+            itemView.setOnLongClickListener(v -> {
+                if (onNoteClickListener !=null) {
+                    onNoteClickListener.onLongClick(getAdapterPosition());
+                }
+                return true;
+            });
         }
     }
 }
