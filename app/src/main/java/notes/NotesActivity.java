@@ -12,29 +12,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Database;
 
 import com.example.myapplication.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class NotesActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewNotes;
     private NotesAdapter adapter;
-    private NotesDBHelper dbHelper;
     private final ArrayList<Note> notes = new ArrayList<>();
-    private SQLiteDatabase database;
+    private NotesDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
+        database = NotesDatabase.getInstance(this);
         recyclerViewNotes = findViewById(R.id.recycler_view_notes);
-        dbHelper = new NotesDBHelper(this);
-        database = dbHelper.getWritableDatabase();
-        getData();
         adapter = new NotesAdapter(notes);
         recyclerViewNotes.setLayoutManager(new LinearLayoutManager(this));
+        getData();
         recyclerViewNotes.setAdapter(adapter);
         adapter.setOnNoteClickListener(new NotesAdapter.OnNoteClickListener() {
             @Override
@@ -67,27 +67,18 @@ public class NotesActivity extends AppCompatActivity {
                 startActivity(new Intent(this, AddNoteActivity.class)));
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private void remove(int position) {
-        int id = notes.get(position).getId();
-        String where = NotesContract.NotesEntry._ID + " =?";
-        String[] whereArgs = new String[]{Integer.toString(id)};
-        database.delete(NotesContract.NotesEntry.TABLE_NAME, where, whereArgs);
+        Note note = notes.get(position);
+        database.notesDao().deleteNote(note);
         getData();
         adapter.notifyDataSetChanged();
     }
 
     private void getData() {
+        List<Note> notesFromDB = database.notesDao().getAllNotes();
         notes.clear();
-        @SuppressLint("Recycle") Cursor cursor = database.query(NotesContract.NotesEntry.TABLE_NAME, null, null, null, null, null, NotesContract.NotesEntry.COLUMN_DAY_OF_WEEK);
-        while (cursor.moveToNext()) {
-            @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex(NotesContract.NotesEntry._ID));
-            @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex(NotesContract.NotesEntry.COLUMN_TITLE));
-            @SuppressLint("Range") String description = cursor.getString(cursor.getColumnIndex(NotesContract.NotesEntry.COLUMN_DESCRIPTION));
-            @SuppressLint("Range") int dayOfWeek = cursor.getInt(cursor.getColumnIndex(NotesContract.NotesEntry.COLUMN_DAY_OF_WEEK));
-            @SuppressLint("Range") int priority = cursor.getInt(cursor.getColumnIndex(NotesContract.NotesEntry.COLUMN_PRIORITY));
-            Note note = new Note(id, title, description, dayOfWeek, priority);
-            notes.add(note);
-        }
-        cursor.close();
+        notes.addAll(notesFromDB);
     }
+
 }
