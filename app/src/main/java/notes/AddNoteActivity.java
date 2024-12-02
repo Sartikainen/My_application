@@ -9,6 +9,8 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.example.myapplication.R;
 
 public class AddNoteActivity extends AppCompatActivity {
@@ -17,13 +19,13 @@ public class AddNoteActivity extends AppCompatActivity {
     private EditText editTextDescription;
     private Spinner spinnerDaysOfWeek;
     private RadioGroup radioGroupPriority;
-    private NotesDatabase database;
+    private MainViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
-        database = NotesDatabase.getInstance(this);
+        viewModel = new ViewModelProvider(this).get(MainViewModel.class);
         editTextTitle = findViewById(R.id.editTxtTitle);
         editTextDescription = findViewById(R.id.editTextDescription);
         spinnerDaysOfWeek = findViewById(R.id.spinnerDaysOfWeek);
@@ -40,7 +42,7 @@ public class AddNoteActivity extends AppCompatActivity {
         int priority = Integer.parseInt(radioButton.getText().toString());
         if (isFilled(title, description)) {
             Note note = new Note(title, description, dayOfWeek, priority);
-            database.notesDao().insertNote(note);
+            viewModel.insertNote(note);
             Intent intent = new Intent(this, NotesActivity.class);
             startActivity(intent);
         } else {

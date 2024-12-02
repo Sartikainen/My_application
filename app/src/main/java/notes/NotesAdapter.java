@@ -1,5 +1,6 @@
 package notes;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,10 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.R;
 import java.util.ArrayList;
+import java.util.List;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder> {
 
-    private ArrayList<Note> notes;
+    private List<Note> notes;
     private OnNoteClickListener onNoteClickListener;
 
     public NotesAdapter(ArrayList<Note> notes) {
@@ -39,7 +41,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         Note note = notes.get(position);
         holder.textViewTitle.setText(note.getTitle());
         holder.textViewDescription.setText(note.getDescription());
-        holder.textViewDayOfWeek.setText(String.format("День недели: %s", Note.getDayAsString(note.getDayOfWeek() + 1)));
+        holder.textViewDayOfWeek.setText(String.format("День недели: %s", getDayAsString(note.getDayOfWeek() + 1)));
         int colorId;
         int priority = note.getPriority();
         colorId = switch (priority) {
@@ -78,5 +80,28 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
                 return true;
             });
         }
+    }
+
+    public static String getDayAsString(int position) {
+        return switch (position) {
+            case 1 -> "Понедельник";
+            case 2 -> "Вторник";
+            case 3 -> "Среда";
+            case 4 -> "Четверг";
+            case 5 -> "Пятница";
+            case 6 -> "Суббота";
+            case 7 -> "Воскресенье";
+            default -> "";
+        };
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
+        notifyDataSetChanged();
+    }
+
+    public List<Note> getNotes() {
+        return notes;
     }
 }
