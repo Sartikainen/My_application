@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.myapplication.category.CapitalActivity;
 import com.example.myapplication.category.ChooseCategoryActivity;
 import com.example.myapplication.category.GuessMovieActivity;
 import com.google.android.material.snackbar.Snackbar;
@@ -66,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.button_notes).setOnClickListener(view ->
                 startActivity(new Intent(this, NotesActivity.class)));
+
+        findViewById(R.id.button_capital).setOnClickListener(view ->
+                startActivity(new Intent(this, CapitalActivity.class)));
     }
 
     public void showDescription() {

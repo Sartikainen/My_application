@@ -105,6 +105,7 @@
     <string name="priority2">2</string>
     <string name="priority3">3</string>
     <string name="warning_fill">Все поля должны быть заполнены</string>
+    <string name="text_button_capital">Столицы</string>
 
     <string-array name="days_of_week">
         <item>Понедельник</item>
