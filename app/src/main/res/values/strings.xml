@@ -106,6 +106,7 @@
     <string name="priority3">3</string>
     <string name="warning_fill">Все поля должны быть заполнены</string>
     <string name="text_button_capital">Столицы</string>
+    <string name="text_button_users">Пользователи</string>
 
     <string-array name="days_of_week">
         <item>Понедельник</item>
@@ -115,6 +116,11 @@
         <item>Пятница</item>
         <item>Суббота</item>
         <item>Воскресенье</item>
+    </string-array>
+
+    <string-array name ="list_of_sex">
+        <item>Мужской</item>
+        <item>Женский</item>
     </string-array>
 
 </resources>

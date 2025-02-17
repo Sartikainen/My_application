@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.myapplication.category.CapitalActivity;
 import com.example.myapplication.category.ChooseCategoryActivity;
 import com.example.myapplication.category.GuessMovieActivity;
+import com.example.myapplication.usersDB.UsersActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 import notes.NotesActivity;
@@ -71,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.button_capital).setOnClickListener(view ->
                 startActivity(new Intent(this, CapitalActivity.class)));
+
+        findViewById(R.id.button_users).setOnClickListener(view ->
+                startActivity(new Intent(this, UsersActivity.class)));
     }
 
     public void showDescription() {

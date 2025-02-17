@@ -20,7 +20,6 @@ public class CapitalActivity extends AppCompatActivity {
     private EditText etSearch;
     private EditText etCountry;
     private EditText etCapital;
-    private TextView tvResult;
     private TextView tvListOfCapitals;
     private TextView tvCapitalResult;
     private Button buttonInsert;
@@ -35,7 +34,6 @@ public class CapitalActivity extends AppCompatActivity {
         etSearch = findViewById(R.id.etSearch);
         etCountry = findViewById(R.id.etCountry);
         etCapital = findViewById(R.id.etCapital);
-        tvResult = findViewById(R.id.tvResult);
         tvListOfCapitals = findViewById(R.id.tvListOfCapitals);
         buttonInsert = findViewById(R.id.buttonInsert);
         tvCapitalResult = findViewById(R.id.tvCapitalResult);
@@ -57,7 +55,6 @@ public class CapitalActivity extends AppCompatActivity {
             etSearch.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
                 }
 
                 @Override
@@ -69,7 +66,6 @@ public class CapitalActivity extends AppCompatActivity {
 
                 @Override
                 public void afterTextChanged(Editable s) {
-
                 }
             });
         });
